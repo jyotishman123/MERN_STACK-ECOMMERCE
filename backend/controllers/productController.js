@@ -6,7 +6,7 @@ import Product from "../models/productModel.js";
 // @route GET/api/products
 // @access Public
 
-const gerProducts = asyncHandler(async (req, res) => {
+const getProducts = asyncHandler(async (req, res) => {
   const products = await Product.find({});
   res.json(products);
 });
@@ -16,7 +16,7 @@ const gerProducts = asyncHandler(async (req, res) => {
 // @route GET/api/products/:id
 // @access Public
 
-const gerProductById = asyncHandler(async (req, res) => {
+const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
     res.json(product);
@@ -27,6 +27,6 @@ const gerProductById = asyncHandler(async (req, res) => {
 });
 
 
-export {gerProductById, gerProducts}
+export {getProductById, getProducts}
 
 
